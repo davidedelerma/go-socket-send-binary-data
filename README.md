@@ -16,3 +16,6 @@ The program sends data to a socket in a binary-encoded format. The data simulate
 ```
 
 The listener consumes the data from the socket, decodes it, and prints it to the screen.
+
+### TODO: make publisher and listerner two different entry points
+ So that they can be started in two different containers and create docker compose file to simulate behaviour
