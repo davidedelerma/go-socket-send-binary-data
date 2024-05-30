@@ -1,6 +1,5 @@
 # Description:
 
-Here's an improved version of the sentence and description:
 
 An example in Go for publishing binary-encoded data to a socket and consuming the published data using two different goroutines.
 
