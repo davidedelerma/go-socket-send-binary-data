@@ -13,7 +13,7 @@ func generateData(packet publisher.Packet) publisher.Packet {
 
 func main() {
 	dataIn := publisher.Packet{Sensid: 1, Locid: 1233, Tstamp: 123452123, Temp: 12}
-	threads := 11
+	threads := 2
 	var wg sync.WaitGroup
 	wg.Add(threads)
 	go func() {
@@ -21,8 +21,8 @@ func main() {
 		listener.Listener()
 	}()
 	go func() {
-		for dataIn.Sensid < uint32(threads)-1 {
-			defer wg.Done()
+		defer wg.Done()
+		for dataIn.Sensid < 100 {
 			publisher.Publisher(dataIn)
 			dataIn = generateData(dataIn)
 		}
